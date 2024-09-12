@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, redirect, flash
 from elasticsearch import Elasticsearch
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize the Flask app
 app = Flask(__name__)
