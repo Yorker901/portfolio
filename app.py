@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, flash
 from elasticsearch import Elasticsearch
 from datetime import datetime
 from dotenv import load_dotenv
+import os
 
 # Load environment variables from .env file for local development
 if os.getenv('RENDER') is None:  # Assume 'RENDER' env variable is set on Render platform
