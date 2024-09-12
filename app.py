@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Initialize the Flask app
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a strong secret key for session management
+app.secret_key = 'hehe'  # Replace with a strong secret key for session management
 
 # Elasticsearch configuration
 # ELASTIC_CLOUD_ID = "ac668387facb455d9201540f7bcdccf3:dXMtY2VudHJhbDEuZ2NwbG91ZC5lcy5pbyQzOThkNTRjMzM2ZWU0NDBjOTBlYzNlY2JiMGI3NDFkYyRkODQ4MTUwNjFjNTQ0MGIwOGJhNzUwMTBkNWMzNzBiZQ=="
