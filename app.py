@@ -4,14 +4,15 @@ from datetime import datetime
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+# Load environment variables from .env file for local development
+if os.getenv('RENDER') is None:  # Assume 'RENDER' env variable is set on Render platform
+    load_dotenv()
 
 # Initialize the Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'default_secret_key')  # Replace with a strong secret key for session management
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'default_secret_key')
 
-# Connect to Elasticsearch
+# Connect to Elasticsearch using environment variables
 es = Elasticsearch(
     cloud_id=os.environ.get('ELASTIC_CLOUD_ID'),
     api_key=os.environ.get('ELASTIC_API_KEY')
