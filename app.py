@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash
 from elasticsearch import Elasticsearch
 from datetime import datetime
+import os
 
 # Initialize the Flask app
 app = Flask(__name__)
