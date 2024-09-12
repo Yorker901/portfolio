@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect, flash
 from elasticsearch import Elasticsearch
 from datetime import datetime
-import os
+from dotenv import load_dotenv
 
 # Load environment variables from .env file for local development
 if os.getenv('RENDER') is None:  # Assume 'RENDER' env variable is set on Render platform
-
+    load_dotenv()
+    
 # Initialize the Flask app
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'default_secret_key')
