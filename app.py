@@ -5,19 +5,13 @@ import os
 
 # Initialize the Flask app
 app = Flask(__name__)
-app.secret_key = 'hehe'  # Replace with a strong secret key for session management
-
-# Elasticsearch configuration
-# ELASTIC_CLOUD_ID = "ac668387facb455d9201540f7bcdccf3:dXMtY2VudHJhbDEuZ2NwbG91ZC5lcy5pbyQzOThkNTRjMzM2ZWU0NDBjOTBlYzNlY2JiMGI3NDFkYyRkODQ4MTUwNjFjNTQ0MGIwOGJhNzUwMTBkNWMzNzBiZQ=="
-# ELASTIC_API_KEY = "bDMyb29aRUJmbEtlQzJiSDlEc0M6U3h1Q2t2UEpUc3lxYnBnWUdXaWl0QQ=="
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'default_secret_key')  # Replace with a strong secret key for session management
 
 # Connect to Elasticsearch
 es = Elasticsearch(
-    cloud_id="ac668387facb455d9201540f7bcdccf3:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvJDM5OGQ1NGMzMzZlZTQ0MGM5MGVjM2VjYmIwYjc0MWRjJGQ4NDgxNTA2MWM1NDQwYjA4YmE3NTAxMGQ1YzM3MGJl",
-    api_key="NG4yOTVwRUJmbEtlQzJiSFgwWHI6eW1lMzU1eHZSWHlsWTc1S2N3REV6dw=="
+    cloud_id=os.environ.get('ELASTIC_CLOUD_ID'),
+    api_key=os.environ.get('ELASTIC_API_KEY')
 )
-
-
 
 # Home route
 @app.route('/')
@@ -65,9 +59,7 @@ def view_contacts():
         print(f"Error: {e}")
         return redirect('/')
 
-
 # Run the app
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
-
