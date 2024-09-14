@@ -23,6 +23,21 @@ es = Elasticsearch(
 def home():
     return render_template('index.html')
 
+# Route for the resume page
+@app.route('/resume')
+def resume():
+    return render_template('resume.html')
+
+# Route for the contact page
+@app.route('/con')
+def con():
+    return render_template('/con.html')
+
+# Route for the about page
+@app.route('/about')
+def about():
+    return render_template('/about.html')
+
 # Route to handle contact form submissions
 @app.route('/contact', methods=['POST'])
 def contact():
