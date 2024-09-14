@@ -185,6 +185,7 @@ input, select, textarea {
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
+		text-align: center;
 		text-transform: uppercase;
 		margin: 0 0 1rem 0;
 	}
@@ -322,6 +323,27 @@ input, select, textarea {
 		border-bottom-color: #eeeeee;
 	}
 
+	.resume-image {
+		max-width: 1020px;
+		height: auto;
+		margin-bottom: 20px;
+		border: none; /* Remove border */
+		border-radius: 0; /* Remove border-radius */
+		box-shadow: none; /* Remove shadow */
+	}
+	
+
+	.profile-pic {
+		width: 140px; /* Set the width and height to the same value */
+		height: 170px; /* Ensures a perfect circle */
+		margin-bottom: 20px;
+		border: 2px solid #ddd; /* Optional: adds a border */
+		border-radius: 50%; /* Creates the circular shape */
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+		object-fit: cover; /* Ensures the image fits well within the circle */
+	}
+	
+	
 /* Row */
 
 	.row {
@@ -2077,7 +2099,8 @@ input, select, textarea {
 		border: 0;
 		border-radius: 0;
 		cursor: pointer;
-		display: inline-block;
+		display: block;
+		margin: 0 auto;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.8rem;
 		font-weight: 900;
@@ -2085,6 +2108,7 @@ input, select, textarea {
 		height: 3rem;
 		line-height: 3rem;
 		padding: 0 2rem;
+		width: 190px;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -4687,3 +4711,5 @@ input, select, textarea {
 		}
 
 	}
+
+	
